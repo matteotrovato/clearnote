@@ -1,0 +1,21 @@
+node_modules/
+.DS_Store
+
+# Meeting data — never commit
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+
+# Secrets and exports
+.env
+.env.*
+*.env
+.clearnote.env
+*.pem
+*.key
+
+# Transcript exports and debug recordings
+*-Matteo-*.txt
+clearnote-recording-*.json
+exports/
