@@ -1,0 +1,14 @@
+/* Only the host element is styled from the page stylesheet; everything inside
+   lives in a shadow root so the meeting app's CSS cannot reach it. */
+#clearnote-host {
+  position: fixed;
+  top: 76px;
+  right: 16px;
+  z-index: 2147483000;
+  width: 340px;
+  max-height: calc(100vh - 140px);
+  color-scheme: dark;
+}
+#clearnote-host[data-collapsed="true"] {
+  width: auto;
+}

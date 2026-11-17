@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Keeps the ClearNote server running so you never have to think about it.
+  This is a template: __INSTALL_DIR__ and __HOME__ are filled in by
+  install-agent.sh, which writes the result to ~/Library/LaunchAgents/.
+  Install with:  sh server/install-agent.sh
+
+  No secrets live here — launch.sh reads them from ~/.clearnote.env, which is
+  readable only by you. A plist is world-readable, so a key in this file would
+  be a key anyone on the machine could read.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.clearnote.server</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/sh</string>
+    <string>__INSTALL_DIR__/launch.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__INSTALL_DIR__</string>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!-- Restart when it fails, but not when it exits cleanly: launch.sh exits 0
+       on purpose when a server you started by hand already holds the port. -->
+  <key>KeepAlive</key>
+  <dict>
+    <key>SuccessfulExit</key>
+    <false/>
+  </dict>
+
+  <key>ThrottleInterval</key>
+  <integer>15</integer>
+
+  <key>ProcessType</key>
+  <string>Background</string>
+
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/clearnote.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/clearnote.log</string>
+</dict>
+</plist>

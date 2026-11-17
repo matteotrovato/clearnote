@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ClearNote</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="mark.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#/">
+        <span class="mark"></span>
+        <span>ClearNote</span>
+      </a>
+      <nav>
+        <a href="#/" data-nav="meetings">Meetings</a>
+        <a href="#/actions" data-nav="actions">Action items</a>
+        <a href="#/settings" data-nav="settings">Settings</a>
+      </nav>
+      <div class="search">
+        <input id="q" type="search" placeholder="Search every transcript…" autocomplete="off" />
+      </div>
+      <span class="pill" id="ai-state"></span>
+    </header>
+
+    <main id="view" aria-live="polite"></main>
+
+    <footer class="foot">
+      No bot joined any of these calls — ClearNote reads the captions the meeting platform
+      already produces.
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
