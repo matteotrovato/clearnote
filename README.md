@@ -411,3 +411,7 @@ speech; and simultaneous speakers coming out in the wrong order.
 - **No CRM sync, and no Outlook.** Calendar matching is Google-only, one
   account, primary calendar.
 - **Single user.** No accounts, sharing, comments or team permissions.
+
+## License
+
+ClearNote is open source under the [MIT License](LICENSE).
